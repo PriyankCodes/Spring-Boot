@@ -1,0 +1,30 @@
+package com.tss.hibernateDemo.dao;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import com.tss.hibernateDemo.entity.Student;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
+
+@Repository
+public class StudentDaoImpl implements StudentDao {
+
+    @Autowired
+    private EntityManager manager;
+
+    @Override
+    @Transactional
+    public Student addNewStudent(Student student) {
+        return manager.merge(student);
+    }
+
+	@Override
+	public List<Student> getAllStudents() {
+		return manager.createQuery("SELECT s FROM Student s", Student.class)
+                .getResultList();
+	}
+}

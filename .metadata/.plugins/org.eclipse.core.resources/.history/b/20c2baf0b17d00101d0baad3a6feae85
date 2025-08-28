@@ -1,0 +1,14 @@
+package com.tss.ioc.controller.config;
+
+import org.springframework.context.annotation.Configuration;
+
+import com.tss.ioc.entity.Computer;
+
+@Configuration
+public class AppConfig {
+
+	public Computer computer()
+	{
+		return new Computer();
+	}
+}

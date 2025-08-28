@@ -1,0 +1,62 @@
+package com.tss.hibernateDemo.dao;
+
+import com.tss.hibernateDemo.entity.Employee;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+public class EmployeeDaoImpl implements EmployeeDao {
+
+	@Autowired
+    private EntityManager entityManager;
+
+    public EmployeeDaoImpl() {
+        entityManager = Persistence
+                .createEntityManagerFactory("my-persistence-unit")
+                .createEntityManager();
+    }
+
+    @Override
+    public void insert(Employee employee) {
+        EntityTransaction transaction = entityManager.getTransaction();
+        try {
+            transaction.begin();
+            entityManager.persist(employee);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction.isActive()) transaction.rollback();
+            throw e;
+        }
+    }
+
+    @Override
+    public List<Employee> getAll() {
+        return entityManager
+                .createQuery("SELECT e FROM Employee e", Employee.class)
+                .getResultList();
+    }
+
+    @Override
+    public Employee findById(int id) {
+        return entityManager.find(Employee.class, id);
+    }
+
+    @Override
+    public List<Employee> findByName(String name) {
+        return entityManager
+                .createQuery("SELECT e FROM Employee e WHERE e.name = :name", Employee.class)
+                .setParameter("name", name)
+                .getResultList();
+    }
+
+    @Override
+    public List<Employee> findByDepartment(String deptname) {
+        return entityManager
+                .createQuery("SELECT e FROM Employee e WHERE e.deptname = :deptname", Employee.class)
+                .setParameter("deptname", deptname)
+                .getResultList();
+    }
+}

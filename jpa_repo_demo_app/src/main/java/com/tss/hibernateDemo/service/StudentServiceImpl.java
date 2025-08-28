@@ -1,0 +1,30 @@
+package com.tss.hibernateDemo.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tss.hibernateDemo.entity.Student;
+import com.tss.hibernateDemo.repository.StudentRepository;
+
+@Service
+public class StudentServiceImpl implements StudentService{
+	
+	@Autowired
+	private StudentRepository studentRepo;
+
+	@Override
+	public List<Student> getAllRecords() {
+		return studentRepo.findAll();
+	}
+
+	@Override
+	public Student addNewStudent(Student student) {	
+		
+		return studentRepo.save(student);
+	}
+	
+	
+	
+}

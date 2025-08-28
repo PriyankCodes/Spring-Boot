@@ -1,0 +1,48 @@
+package com.tss.hibernateDemo.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.tss.hibernateDemo.entity.Employee;
+import com.tss.hibernateDemo.service.EmployeeService;
+
+@RestController
+@RequestMapping("/employeeapp")
+public class EmployeeController {
+
+    @Autowired
+    private EmployeeService employeeService;
+
+    // Insert new Employee
+    @PostMapping("/employees")
+    public void addNewEmployee(@RequestBody Employee employee) {
+    	employeeService.addEmployee(employee)
+        return;
+    }
+
+    // Get all Employees
+    @GetMapping("/readAll")
+    public List<Employee> getAllEmployees() {
+        return employeeService.getAllEmployees();
+    }
+
+    // Find by ID
+    @GetMapping("/employee/{id}")
+    public Employee getEmployeeById(@PathVariable int id) {
+        return employeeService.getEmployeeById(id);
+    }
+
+    // Find by Name
+    @GetMapping("/name/{name}")
+    public List<Employee> getEmployeesByName(@PathVariable String name) {
+        return employeeService.getEmployeesByName(name);
+    }
+
+    // Find by Department
+    @GetMapping("/department/{deptname}")
+    public List<Employee> getEmployeesByDepartment(@PathVariable String deptname) {
+        return employeeService.getEmployeesByDepartment(deptname);
+    }
+}

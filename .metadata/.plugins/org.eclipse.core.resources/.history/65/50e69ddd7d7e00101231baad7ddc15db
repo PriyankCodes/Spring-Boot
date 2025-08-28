@@ -1,0 +1,77 @@
+package com.tss.hibernateDemo.entity;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.Column;
+
+@Entity
+@Table(name = "Employee")
+public class Employee {
+
+    @Id
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "name", nullable = false, length = 100)
+    private String name;
+
+    @Column(name = "salary", precision = 10, scale = 2)
+    private double salary;
+
+    @Column(name = "deptname", length = 50)
+    private String deptname;
+
+    // Constructors
+    public Employee() {}
+
+    public Employee(int id, String name, double salary, String deptname) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+        this.deptname = deptname;
+    }
+
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+    public String getDeptname() {
+        return deptname;
+    }
+
+    public void setDeptname(String deptname) {
+        this.deptname = deptname;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", salary=" + salary +
+                ", deptname='" + deptname + '\'' +
+                '}';
+    }
+}

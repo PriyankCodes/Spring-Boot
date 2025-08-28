@@ -1,0 +1,21 @@
+package com.tss.hibernateDemo.dao;
+
+import org.springframework.stereotype.Repository;
+import com.tss.hibernateDemo.entity.Student;
+
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
+
+@Repository
+public class StudentDaoImpl implements StudentDao {
+
+    @PersistenceContext
+    private EntityManager manager;
+
+    @Override
+    public Student addNewStudent(Student student) {
+        Student mergedStudent = manager.merge(student);
+        return mergedStudent;
+    }
+}

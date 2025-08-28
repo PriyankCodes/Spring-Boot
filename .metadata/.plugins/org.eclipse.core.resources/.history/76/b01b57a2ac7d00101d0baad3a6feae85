@@ -1,0 +1,5 @@
+package com.tss.hello_spring_app.controller;
+
+public class HelloController {
+
+}

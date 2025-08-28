@@ -1,0 +1,8 @@
+package com.tss.hibernateDemo.dao;
+
+import com.tss.hibernateDemo.entity.Student;
+
+public interface StudentDao {
+	
+	Student addNewStudent(Student student);
+}

@@ -1,0 +1,40 @@
+package com.tss.hibernateDemo.service;
+
+import com.tss.dao.EmployeeDao;
+import com.tss.dao.EmployeeDaoImpl;
+import com.tss.model.Employee;
+import java.util.List;
+
+public class EmployeeServiceImpl implements EmployeeService {
+
+    private EmployeeDao employeeDao;
+
+    public EmployeeServiceImpl() {
+        this.employeeDao = new EmployeeDaoImpl();
+    }
+
+    @Override
+    public void addEmployee(Employee employee) {
+        employeeDao.insert(employee);
+    }
+
+    @Override
+    public List<Employee> getAllEmployees() {
+        return employeeDao.getAll();
+    }
+
+    @Override
+    public Employee getEmployeeById(int id) {
+        return employeeDao.findById(id);
+    }
+
+    @Override
+    public List<Employee> getEmployeesByName(String name) {
+        return employeeDao.findByName(name);
+    }
+
+    @Override
+    public List<Employee> getEmployeesByDepartment(String deptname) {
+        return employeeDao.findByDepartment(deptname);
+    }
+}

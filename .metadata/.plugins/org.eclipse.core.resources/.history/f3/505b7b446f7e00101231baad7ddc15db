@@ -1,0 +1,5 @@
+package com.tss.hibernateDemo.entity;
+
+public class Student {
+
+}

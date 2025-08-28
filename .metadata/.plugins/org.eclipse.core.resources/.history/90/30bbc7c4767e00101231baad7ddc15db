@@ -1,0 +1,8 @@
+package com.tss.hibernateDemo.service;
+
+import com.tss.hibernateDemo.entity.Student;
+
+public interface StudentService {
+	
+	Student addNewStudent(Student student);
+}

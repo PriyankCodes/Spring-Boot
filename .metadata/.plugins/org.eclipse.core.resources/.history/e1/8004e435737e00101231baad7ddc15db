@@ -1,0 +1,5 @@
+package com.tss.hibernateDemo.dao;
+
+public class StudentDaoImpl {
+
+}

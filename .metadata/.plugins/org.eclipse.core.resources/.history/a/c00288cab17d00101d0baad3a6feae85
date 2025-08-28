@@ -1,0 +1,5 @@
+package com.tss.ioc.controller.config;
+
+public class AppConfig {
+
+}

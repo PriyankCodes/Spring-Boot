@@ -1,0 +1,5 @@
+package com.tss.ioc.entity;
+
+public class Employee {
+
+}

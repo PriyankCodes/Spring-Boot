@@ -1,0 +1,5 @@
+package com.tss.hibernateDemo.repository;
+
+public interface EmployeeRepository {
+
+}

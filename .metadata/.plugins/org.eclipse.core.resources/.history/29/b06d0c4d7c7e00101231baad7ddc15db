@@ -1,0 +1,12 @@
+package com.tss.hibernateDemo.dao;
+
+import com.tss.model.Employee;
+import java.util.List;
+
+public interface EmployeeDao {
+    void insert(Employee employee);
+    List<Employee> getAll();
+    Employee findById(int id);
+    List<Employee> findByName(String name);
+    List<Employee> findByDepartment(String deptname);
+}
