@@ -9,13 +9,11 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
-
 @Entity
 @Table(name = "employees")
 @RequiredArgsConstructor
 @Data
 public class Employee {
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -28,5 +26,4 @@ public class Employee {
 
 	@Column(name = "deptname")
 	private String deptName;
-
 }

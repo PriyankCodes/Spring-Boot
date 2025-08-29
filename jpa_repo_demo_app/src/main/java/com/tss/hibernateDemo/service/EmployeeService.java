@@ -2,13 +2,16 @@ package com.tss.hibernateDemo.service;
 
 import java.util.List;
 
+import com.tss.hibernateDemo.dto.EmployeeRequestDto;
+import com.tss.hibernateDemo.dto.EmployeeResponseDto;
+import com.tss.hibernateDemo.dto.EmployeeResponsePage;
 import com.tss.hibernateDemo.entity.Employee;
 
 public interface EmployeeService {
 	
-	List<Employee> readAllEmployee();
+	EmployeeResponsePage readAllEmployee(int pageSize, int pageNo);
 	
-	Employee addNewEmployee(Employee employee);
+	EmployeeResponseDto addNewEmployee(EmployeeRequestDto employee);
 	
 	Employee findEmployeeById(int id);
 	

@@ -9,8 +9,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.tss.hibernateDemo.dto.EmployeeRequestDto;
+import com.tss.hibernateDemo.dto.EmployeeResponseDto;
+import com.tss.hibernateDemo.dto.EmployeeResponsePage;
 import com.tss.hibernateDemo.entity.Employee;
 import com.tss.hibernateDemo.service.EmployeeService;
 
@@ -22,13 +26,13 @@ public class EmployeeController {
 	EmployeeService employeeService;
 	
 	@GetMapping("/readAll")
-	public List<Employee> readAllEmployee()
+	public EmployeeResponsePage readAllEmployee(@RequestParam(required=false) int pageSize, @RequestParam(required=false) int pageNo)
 	{
-		return employeeService.readAllEmployee();
+		return employeeService.readAllEmployee(pageSize,pageNo);
 	}
 	
 	@PostMapping("/addNew")
-	public Employee addNewEmployee(@RequestBody Employee employee)
+	public EmployeeResponseDto addNewEmployee(@RequestBody EmployeeRequestDto employee)
 	{
 		return employeeService.addNewEmployee(employee);
 	}
