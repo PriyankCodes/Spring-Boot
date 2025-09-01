@@ -3,6 +3,7 @@ package com.tss.hibernateDemo.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -13,6 +14,7 @@ import com.tss.hibernateDemo.dto.EmployeeRequestDto;
 import com.tss.hibernateDemo.dto.EmployeeResponseDto;
 import com.tss.hibernateDemo.dto.EmployeeResponsePage;
 import com.tss.hibernateDemo.entity.Employee;
+import com.tss.hibernateDemo.exception.EmployeeApiException;
 import com.tss.hibernateDemo.repository.EmployeeRepository;
 
 @Service
@@ -20,7 +22,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
 	EmployeeRepository employeeRepository;
-
+	
+	@Autowired
+	private ModelMapper mapper;
+	
 	@Override
 	public EmployeeResponsePage readAllEmployee(int pageSize, int pageNo) {
 	    
@@ -44,39 +49,20 @@ public class EmployeeServiceImpl implements EmployeeService {
 	    return responsePage;
 	}
 
-
-	private EmployeeResponseDto employeeToEmployeeResponseDto(Employee employee) {
-		EmployeeResponseDto dto = new EmployeeResponseDto();
-		dto.setName(employee.getName());
-		dto.setDeptName(employee.getDeptName());
-
-		return dto;
-	}
-
 	@Override
 	public EmployeeResponseDto addNewEmployee(EmployeeRequestDto employeedto) {
-		
-		Employee employee = employeeRequestDtoToEmployee(employeedto);
-		Employee dbEmployee=employeeRepository.save(employee);
-		
-		EmployeeResponseDto employeeResp = employeeToEmployeeResponseDto(dbEmployee);
-		
-		return employeeResp;
-	}
-	
-	private Employee employeeRequestDtoToEmployee(EmployeeRequestDto employeedto) {
-		Employee employe = new Employee();
-		employe.setName(employeedto.getName());
-		employe.setDeptName(employeedto.getDeptName());
-		employe.setSalary(employeedto.getSalary());
-		return employe;
+
+	    Employee employee = mapper.map(employeedto, Employee.class);
+	    Employee dbEmployee = employeeRepository.save(employee);
+	    return mapper.map(dbEmployee, EmployeeResponseDto.class);
 	}
 
 	@Override
 	public Employee findEmployeeById(int id) {
-		return employeeRepository.findById(id)
-				.orElseThrow(() -> new RuntimeException("Employee not found with id: " + id));
+	    return employeeRepository.findById(id)
+	            .orElseThrow(() -> new EmployeeApiException("Employee not found with id: " + id));
 	}
+
 
 	@Override
 	public void deleteEmployee(int id) {

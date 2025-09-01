@@ -4,9 +4,13 @@
 	<section name="java.lang.Class">
 		<item key="replaceBarOpen" value="true"/>
 		<list key="findhistory">
+			<item value="employee"/>
+			<item value="dto"/>
 			<item value="com.tss.dao"/>
 		</list>
 		<list key="replacehistory">
+			<item value="employe"/>
+			<item value="employee"/>
 			<item value="com.tss.hibernateDemo.dao"/>
 		</list>
 	</section>

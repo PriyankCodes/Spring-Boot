@@ -1,5 +1,0 @@
-package com.tss.hibernateDemo.dao;
-
-public interface StudentDao {
-
-}

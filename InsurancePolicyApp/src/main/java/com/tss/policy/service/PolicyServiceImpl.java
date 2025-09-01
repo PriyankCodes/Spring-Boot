@@ -4,7 +4,9 @@ import com.tss.policy.dto.PolicyRequestDto;
 import com.tss.policy.dto.PolicyResponseDto;
 import com.tss.policy.dto.PolicyResponsePage;
 import com.tss.policy.entity.Policy;
+import com.tss.policy.exception.PolicyApiException;
 import com.tss.policy.repositary.PolicyRepositary;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.stereotype.Service;
@@ -19,11 +21,14 @@ public class PolicyServiceImpl implements PolicyService {
     @Autowired
     private PolicyRepositary policyRepositary;
 
+    @Autowired
+    private ModelMapper modelMapper;
+
     @Override
     public PolicyResponseDto createPolicy(PolicyRequestDto insurancePolicy) {
-        Policy policy = policyRequestDtoToPolicy(insurancePolicy);
+        Policy policy = modelMapper.map(insurancePolicy, Policy.class);
         Policy dbPolicy = policyRepositary.save(policy);
-        return policyToResponsePolicyDto(dbPolicy);
+        return modelMapper.map(dbPolicy, PolicyResponseDto.class);
     }
 
     @Override
@@ -32,7 +37,7 @@ public class PolicyServiceImpl implements PolicyService {
 
         List<PolicyResponseDto> dtoList = policyPage.getContent()
                 .stream()
-                .map(this::policyToResponsePolicyDto)
+                .map(policy -> modelMapper.map(policy, PolicyResponseDto.class))
                 .collect(Collectors.toList());
 
         return new PolicyResponsePage(
@@ -47,8 +52,8 @@ public class PolicyServiceImpl implements PolicyService {
     @Override
     public PolicyResponseDto getPolicyById(Long id) {
         Policy policy = policyRepositary.findById(id)
-                .orElseThrow(() -> new RuntimeException("Policy not found with id " + id));
-        return policyToResponsePolicyDto(policy);
+                .orElseThrow(() -> new PolicyApiException("Policy not found with id " + id));
+        return modelMapper.map(policy, PolicyResponseDto.class);
     }
 
     @Override
@@ -58,7 +63,7 @@ public class PolicyServiceImpl implements PolicyService {
 
         List<PolicyResponseDto> dtoList = policyPage.getContent()
                 .stream()
-                .map(this::policyToResponsePolicyDto)
+                .map(policy -> modelMapper.map(policy, PolicyResponseDto.class))
                 .collect(Collectors.toList());
 
         return new PolicyResponsePage(
@@ -76,7 +81,7 @@ public class PolicyServiceImpl implements PolicyService {
 
         List<PolicyResponseDto> filtered = policies.stream()
                 .filter(p -> Period.between(p.getStartDate(), p.getEndDate()).getYears() < years)
-                .map(this::policyToResponsePolicyDto)
+                .map(p -> modelMapper.map(p, PolicyResponseDto.class))
                 .collect(Collectors.toList());
 
         int start = Math.min(page * size, filtered.size());
@@ -96,27 +101,8 @@ public class PolicyServiceImpl implements PolicyService {
     public void deletePolicyByPolicyNumber(String policyNumber) {
         Policy policy = policyRepositary.findByPolicyNumber(policyNumber);
         if (policy == null) {
-            throw new RuntimeException("Policy not found with number " + policyNumber);
+            throw new PolicyApiException("Policy not found with number " + policyNumber);
         }
         policyRepositary.delete(policy);
-    }
-
-    private PolicyResponseDto policyToResponsePolicyDto(Policy dbPolicy) {
-        return new PolicyResponseDto(
-                dbPolicy.getPolicyNumber(),
-                dbPolicy.getHolderName(),
-                dbPolicy.getStartDate(),
-                dbPolicy.getEndDate(),
-                dbPolicy.getAmount()
-        );
-    }
-
-    private Policy policyRequestDtoToPolicy(PolicyRequestDto insurancePolicy) {
-        Policy policy = new Policy();
-        policy.setHolderName(insurancePolicy.getHolderName());
-        policy.setStartDate(insurancePolicy.getStartDate());
-        policy.setEndDate(insurancePolicy.getEndDate());
-        policy.setAmount(insurancePolicy.getAmount());
-        return policy;
     }
 }
