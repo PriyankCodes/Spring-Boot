@@ -1,18 +1,19 @@
 package com.tss.hibernateDemo.dto;
 
+import com.tss.hibernateDemo.entity.Address;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 @AllArgsConstructor
-@NoArgsConstructor
+@RequiredArgsConstructor
 @Data
 public class StudentRequestDto {
 
@@ -35,4 +36,7 @@ public class StudentRequestDto {
     @Min(value = 18, message = "Age must be at least 18")
     @Max(value = 60, message = "Age must not exceed 60")
     private Integer age;
+    
+    private Address address;
+  
 }

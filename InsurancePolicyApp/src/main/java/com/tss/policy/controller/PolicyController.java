@@ -15,13 +15,11 @@ public class PolicyController {
     @Autowired
     private PolicyService policyService;
 
-    // ✅ Create new policy
     @PostMapping("/create")
     public PolicyResponseDto addNewPolicy(@Valid @RequestBody PolicyRequestDto policyRequestDto) {
         return policyService.createPolicy(policyRequestDto);
     }
 
-    // ✅ Get all policies (with pagination defaults)
     @GetMapping("/all")
     public PolicyResponsePage getAllPolicies(
             @RequestParam(defaultValue = "0") int page,
@@ -29,13 +27,11 @@ public class PolicyController {
         return policyService.getAllPolicies(page, size);
     }
 
-    // ✅ Get single policy by ID
     @GetMapping("/{id}")
     public PolicyResponseDto getPolicyById(@PathVariable Long id) {
         return policyService.getPolicyById(id);
     }
 
-    // ✅ Search policies by holder name (with pagination)
     @GetMapping("/search")
     public PolicyResponsePage searchByHolderName(
             @RequestParam String name,
@@ -44,7 +40,6 @@ public class PolicyController {
         return policyService.searchByHolderName(name, page, size);
     }
 
-    // ✅ Get policies shorter than given duration in years
     @GetMapping("/duration")
     public PolicyResponsePage getByDurationLessThan(
             @RequestParam int years,
@@ -53,7 +48,6 @@ public class PolicyController {
         return policyService.getPoliciesByDurationLessThan(years, page, size);
     }
 
-    // ✅ Delete policy by policy number
     @PostMapping("/delete/{policyNumber}")
     public String deleteByPolicyNumber(@PathVariable String policyNumber) {
         policyService.deletePolicyByPolicyNumber(policyNumber);
