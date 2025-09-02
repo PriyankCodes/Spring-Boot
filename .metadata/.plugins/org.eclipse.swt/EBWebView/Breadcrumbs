@@ -1,33 +1,47 @@
-1:20:37 Tab12 FinishNav123
-1:20:37 Tab12 PageLoad
-1:20:38 Memory Pressure: Moderate
-1:20:40 Tab12 StartNav124 #typed
-1:20:40 Tab12 FinishNav124
-1:20:40 Tab12 PageLoad
-1:20:48 Memory Pressure: Moderate
-1:20:58 Memory Pressure: Moderate
-1:21:08 Memory Pressure: Moderate
-1:21:18 Memory Pressure: Moderate
-1:21:28 Memory Pressure: Moderate
-1:21:38 Memory Pressure: Moderate
-1:21:48 Memory Pressure: Moderate
-1:21:53 Tab12 StartNav125 #typed
-1:21:53 Tab12 FinishNav125
-1:21:53 Tab12 PageLoad
-1:21:58 Memory Pressure: Moderate
-1:22:08 Memory Pressure: Moderate
-1:22:18 Memory Pressure: Moderate
-1:22:28 Memory Pressure: Moderate
-1:22:38 Memory Pressure: Moderate
-1:22:48 Memory Pressure: Moderate
-1:22:58 Memory Pressure: Moderate
-1:23:08 Memory Pressure: Moderate
-1:23:13 Memory Pressure: Critical
-1:23:18 Memory Pressure: Moderate
-1:23:28 Memory Pressure: Moderate
-1:23:38 Memory Pressure: Moderate
-1:23:43 Memory Pressure: Critical
-1:23:48 Memory Pressure: Moderate
-1:23:58 Memory Pressure: Critical
-1:24:03 Memory Pressure: Moderate
-1:24:18 Memory Pressure: Moderate
+2:11:13 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosedAll
+2:11:13 Microsoft.Shutdown.TabStripModel.SendDetachWebContentsNotifications
+2:11:13 Microsoft.UnloadController.ClearUnloadState
+2:11:13 Browser57 Close Tab57 at 0
+2:11:13 Tab57 WebContentsDestroyed
+2:11:13 Microsoft.UnloadController.TabStripEmpty
+2:11:13 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
+2:11:13 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+2:11:13 Microsoft.Shutdown.OnWindowClosing
+2:11:13 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
+2:11:13 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+2:11:13 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
+2:11:13 Widget Closed: BrowserFrame
+2:11:13 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
+2:11:13 Microsoft.Shutdown.OnWindowClosing
+2:11:13 Microsoft.Shutdown.OnWindowClosing_DeleteScheduled
+2:11:13 Microsoft.Browser_Removed
+2:11:23 Memory Pressure: Moderate
+2:11:38 Memory Pressure: Moderate
+2:11:48 Memory Pressure: Moderate
+2:11:58 Memory Pressure: Moderate
+2:12:08 Memory Pressure: Moderate
+2:12:18 Memory Pressure: Moderate
+2:12:28 Memory Pressure: Moderate
+2:12:38 Memory Pressure: Moderate
+2:12:48 Memory Pressure: Moderate
+2:12:58 Memory Pressure: Moderate
+2:13:08 Memory Pressure: Critical
+2:13:13 Memory Pressure: Critical
+2:13:18 Memory Pressure: Critical
+2:13:23 Memory Pressure: Critical
+2:13:28 Memory Pressure: Critical
+2:13:33 Memory Pressure: Critical
+2:13:38 Memory Pressure: Moderate
+2:13:48 Memory Pressure: Moderate
+2:13:58 Memory Pressure: Moderate
+2:14:08 Memory Pressure: Moderate
+2:14:18 Memory Pressure: Moderate
+2:14:28 Memory Pressure: Moderate
+2:14:38 Memory Pressure: Moderate
+2:14:48 Memory Pressure: Moderate
+2:14:58 Memory Pressure: Moderate
+2:15:08 Memory Pressure: Moderate
+2:15:19 Memory Pressure: Critical
+2:15:24 Memory Pressure: Moderate
+2:15:34 Memory Pressure: Moderate
+2:15:44 Memory Pressure: Moderate
