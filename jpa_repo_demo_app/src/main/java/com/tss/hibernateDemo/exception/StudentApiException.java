@@ -15,3 +15,4 @@ public class StudentApiException extends RuntimeException {
         return message;
     }
 }
+

@@ -24,4 +24,6 @@ public interface StudentService {
 	    Address getAddressByStudentId(int studentId);
 
 	    StudentResponseDto updateAddressByStudentId(int studentId, Address newAddress);
+
+		StudentResponseDto assignCourse(int studentId, long courseId);
 }

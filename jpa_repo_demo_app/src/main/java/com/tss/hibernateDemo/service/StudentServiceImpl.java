@@ -11,14 +11,19 @@ import com.tss.hibernateDemo.dto.StudentRequestDto;
 import com.tss.hibernateDemo.dto.StudentResponseDto;
 import com.tss.hibernateDemo.entity.Address;
 import com.tss.hibernateDemo.entity.Student;
+import com.tss.hibernateDemo.entity.Course;
 import com.tss.hibernateDemo.exception.StudentApiException;
 import com.tss.hibernateDemo.repository.StudentRepository;
+import com.tss.hibernateDemo.repository.CourseRepository;
 
 @Service
 public class StudentServiceImpl implements StudentService {
 
     @Autowired
     private StudentRepository studentRepo;
+    
+    @Autowired
+    private CourseRepository courseRepo;
 
     @Autowired
     private ModelMapper modelMapper;
@@ -99,5 +104,30 @@ public class StudentServiceImpl implements StudentService {
         Student updated = studentRepo.save(student);
         return modelMapper.map(updated, StudentResponseDto.class);
     }
+    
+    @Override
+    public StudentResponseDto assignCourse(int studentId, long courseId) {
+
+        Student dbStudent = studentRepo.findById(studentId)
+                .orElseThrow(() -> new StudentApiException("student does not exists"));
+
+        Course dbCourse = courseRepo.findById(courseId)
+                .orElseThrow(() -> new StudentApiException("course does not exists"));
+
+        List<Course> existingCourses = dbStudent.getCourses();
+
+        existingCourses.add(dbCourse);
+        dbStudent.setCourses(existingCourses);
+        Student updatedStudent = studentRepo.save(dbStudent);
+
+        List<Student> existingStudents = dbCourse.getStudents();
+        existingStudents.add(updatedStudent);
+        dbCourse.setStudents(existingStudents);
+
+        courseRepo.save(dbCourse);
+
+        return modelMapper.map(updatedStudent, StudentResponseDto.class);
+    }
+
 
 }

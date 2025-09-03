@@ -72,4 +72,10 @@ public class StudentController {
 		return ResponseEntity.ok(updatedStudent);
 	}
 
+	@PutMapping("/{studentId}/courses/{courseId}")
+	public ResponseEntity<StudentResponseDto> assignCourse(@PathVariable int studentId, @PathVariable long courseId) {
+
+		StudentResponseDto response = studentService.assignCourse(studentId, courseId);
+		return ResponseEntity.ok(response);
+	}
 }

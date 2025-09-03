@@ -8,12 +8,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class StudentResponseDto {
-    private int studentId;
-    private int rollNumber;
-    private String firstName;
-    private String lastName;
-    private String email;
-    private int age;
-    
-    
+	private int studentId;
+	private int rollNumber;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private int age;
+
 }
