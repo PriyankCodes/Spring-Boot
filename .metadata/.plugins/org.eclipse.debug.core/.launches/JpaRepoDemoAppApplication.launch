@@ -9,6 +9,7 @@
     </listAttribute>
     <mapAttribute key="org.eclipse.debug.core.environmentVariables">
         <mapEntry key="db_password_mail" value="gipa xdtt ffdb fbnm "/>
+        <mapEntry key="workbench_pass" value="priyank@2k25"/>
     </mapAttribute>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_ATTR_USE_ARGFILE" value="false"/>
     <booleanAttribute key="org.eclipse.jdt.launching.ATTR_EXCLUDE_TEST_CODE" value="true"/>
