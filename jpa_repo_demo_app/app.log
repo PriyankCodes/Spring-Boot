@@ -1,0 +1,2 @@
+2025-09-04T17:11:52.051+05:30  WARN 4136 --- [jpa_repo_demo_app] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-09-04T18:27:44.632+05:30  WARN 4136 --- [jpa_repo_demo_app] [HikariPool-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1h1m56s228ms973µs).
