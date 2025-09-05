@@ -8,7 +8,7 @@ import com.tss.mail.dto.MailResponse;
 import com.tss.mail.service.MailService;
 
 @RestController
-@RequestMapping("/api/mail")
+@RequestMapping("/api")
 public class MailController {
 
     @Autowired
