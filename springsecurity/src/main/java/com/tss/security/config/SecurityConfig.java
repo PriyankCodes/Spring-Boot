@@ -48,17 +48,16 @@ public class SecurityConfig {
 		http.csrf(csrf -> csrf.disable()).cors(withDefaults());
 		http.sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
-		http.authorizeHttpRequests(request -> request
-				.requestMatchers("/api/auth/register", "/api/auth/login").permitAll()
-				.requestMatchers(HttpMethod.GET, "/studentapp/**").hasAnyRole("USER", "ADMIN", "MODERATOR")
-				.requestMatchers(HttpMethod.POST, "/studentapp/**").hasAnyRole("ADMIN", "MODERATOR")
-				.requestMatchers(HttpMethod.PUT, "/studentapp/**").hasAnyRole("ADMIN", "MODERATOR")
-				.requestMatchers(HttpMethod.DELETE, "/studentapp/**").hasRole("ADMIN")
-				.anyRequest().authenticated());
-		
+		http.authorizeHttpRequests(request -> request.requestMatchers("/api/register").permitAll());
+		http.authorizeHttpRequests(request -> request.requestMatchers("/api/login").permitAll());
+
+		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.GET, "/studentapp/**"));
+		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.POST, "/studentapp/**"));
+		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.PUT, "/studentapp/**"));
+		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.DELETE, "/studentapp/**"));
 		http.exceptionHandling(exception -> exception.authenticationEntryPoint(authenticationEntryPoint));
 		http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
-		
+		http.authorizeHttpRequests(request -> request.anyRequest().authenticated());
 		return http.build();
 	}
 }

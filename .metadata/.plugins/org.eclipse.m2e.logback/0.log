@@ -5217,3 +5217,13 @@ org.eclipse.core.runtime.CoreException: Launch configuration JpaRepoDemoAppAppli
 2025-09-08 16:52:39,298 [Worker-138: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-09-08 16:52:39,315 [Worker-138: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\priyank.fichadiya\Desktop\Spring-Assignment\springsecurity\src\test\resources
 2025-09-08 16:53:39,511 [Worker-136: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-08 16:53:39,542 [Worker-136: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-08 16:53:39,548 [Worker-136: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\priyank.fichadiya\Desktop\Spring-Assignment\springsecurity\src\test\resources
+2025-09-08 16:54:36,893 [Worker-138: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-08 16:54:36,925 [Worker-138: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-08 16:54:36,934 [Worker-138: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\priyank.fichadiya\Desktop\Spring-Assignment\springsecurity\src\test\resources
+2025-09-08 17:07:17,673 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-08 17:07:18,001 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-08 17:07:18,055 [Worker-128: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\priyank.fichadiya\Desktop\Spring-Assignment\springsecurity\src\test\resources
+2025-09-08 17:13:48,168 [Worker-141: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-08 17:13:48,176 [Worker-141: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes

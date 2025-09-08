@@ -69,7 +69,6 @@ INDEX VERSION 1.134+C:\Users\priyank.fichadiya\Desktop\Spring-Assignment\.metada
 2435727730.index
 4029222119.index
 1299277980.index
-2218312187.index
 139252681.index
 3472919647.index
 1534681185.index
