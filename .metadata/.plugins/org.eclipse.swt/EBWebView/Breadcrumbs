@@ -1,30 +1,51 @@
-1:13:24 Microsoft.Shutdown.TabStripModel.CloseWebContentses_FastShutdown
-1:13:24 Microsoft.Shutdown.TabStripModel.ShouldRunUnloadListenerBeforeClosing_false
-1:13:24 Tab2 RenderProcessGone
-1:13:24 Microsoft.UnloadController.ClearUnloadState
-1:13:24 Microsoft.Shutdown.TabStripModel.RunUnloadListenerBeforeClosing_false
-1:13:24 Microsoft.Shutdown.TabStripModel.InternalCloseTabsImpl_ClosedAll
-1:13:24 Microsoft.Shutdown.TabStripModel.SendDetachWebContentsNotifications
-1:13:25 Microsoft.UnloadController.ClearUnloadState
-1:13:25 Browser2 Close Tab2 at 0
-1:13:25 Tab2 WebContentsDestroyed
-1:13:25 Microsoft.UnloadController.TabStripEmpty
-1:13:25 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
-1:13:25 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
-1:13:25 Microsoft.Shutdown.OnWindowClosing
-1:13:25 Microsoft.UnloadController.IsUnclosableApp_IsNotWebApp
-1:13:25 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
-1:13:25 Microsoft.Shutdown.OnWindowClosingPostClearBrowsingData_NoBrowsingDataCleared
-1:13:25 Widget Closed: BrowserFrame
-1:13:25 Microsoft.UnloadController.HasCompletedUnloadProcessing_True
-1:13:25 Microsoft.Shutdown.OnWindowClosing
-1:13:25 Microsoft.Shutdown.OnWindowClosing_DeleteScheduled
-1:13:25 Microsoft.Last_Browser_Removed
-1:13:25 Microsoft.Shutdown.ShutdownIfNoBrowsers
-1:13:25 Microsoft.Shutdown.SetTryingToQuit_Quitting
-1:13:25 Microsoft.Shutdown.NotifyAppTerminating
-1:13:25 Microsoft.Shutdown.OnAppExiting
-1:13:25 Microsoft.Shutdown.HandleAppExitingForPlatform_Aura
-1:13:25 Microsoft.Shutdown.HandleAppExitingForPlatform_Aura.NotificationUIManager_StartShutdown
-1:13:25 Microsoft.Shutdown.HandleAppExitingForPlatform_Aura.CloseAllSecondaryWidgets
-1:13:25 Shutdown
+2:21:23 Memory Pressure: Moderate
+2:21:33 Memory Pressure: Moderate
+2:21:43 Memory Pressure: Moderate
+2:21:53 Memory Pressure: Moderate
+2:22:03 Memory Pressure: Critical
+2:22:08 Memory Pressure: Moderate
+2:22:18 Memory Pressure: Moderate
+2:22:28 Memory Pressure: Moderate
+2:22:32 Tab44 StartNav305 #typed
+2:22:32 Tab44 FinishNav305
+2:22:32 Tab44 PageLoad
+2:22:38 Memory Pressure: Moderate
+2:22:48 Memory Pressure: Moderate
+2:22:58 Memory Pressure: Moderate
+2:23:08 Memory Pressure: Moderate
+2:23:18 Memory Pressure: Moderate
+2:23:28 Memory Pressure: Moderate
+2:23:38 Memory Pressure: Moderate
+2:23:48 Memory Pressure: Moderate
+2:23:58 Memory Pressure: Moderate
+2:24:08 Memory Pressure: Moderate
+2:24:13 Memory Pressure: Critical
+2:24:18 Memory Pressure: Moderate
+2:24:28 Memory Pressure: Critical
+2:24:33 Memory Pressure: Critical
+2:24:38 Memory Pressure: Moderate
+2:24:48 Memory Pressure: Moderate
+2:24:58 Memory Pressure: Moderate
+2:25:08 Memory Pressure: Moderate
+2:25:18 Memory Pressure: Moderate
+2:25:28 Memory Pressure: Moderate
+2:25:38 Memory Pressure: Moderate
+2:25:48 Memory Pressure: Moderate
+2:25:58 Memory Pressure: Moderate
+2:26:08 Memory Pressure: Moderate
+2:26:18 Memory Pressure: Moderate
+2:26:28 Memory Pressure: Moderate
+2:26:38 Memory Pressure: Moderate
+2:26:48 Memory Pressure: Moderate
+2:26:58 Memory Pressure: Moderate
+2:27:08 Memory Pressure: Moderate
+2:27:18 Memory Pressure: Moderate
+2:27:28 Memory Pressure: Moderate
+2:27:38 Memory Pressure: Moderate
+2:27:48 Memory Pressure: Moderate
+2:27:58 Memory Pressure: Moderate
+2:28:08 Memory Pressure: Moderate
+2:28:18 Memory Pressure: Moderate
+2:28:28 Memory Pressure: Moderate
+2:28:38 Memory Pressure: Moderate
+2:28:48 Memory Pressure: Moderate
