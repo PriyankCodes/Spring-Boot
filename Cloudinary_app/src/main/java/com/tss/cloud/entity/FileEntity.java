@@ -17,5 +17,5 @@ public class FileEntity {
 
     private String fileName;
     private String fileType;
-    private String fileUrl;   // Cloudinary URL
+    private String fileUrl;   
 }
