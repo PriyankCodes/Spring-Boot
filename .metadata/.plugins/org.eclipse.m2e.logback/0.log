@@ -5726,3 +5726,15 @@ org.eclipse.core.runtime.CoreException: Launch configuration JpaRepoDemoAppAppli
 2025-09-09 16:49:22,926 [Worker-402: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2025-09-09 16:49:23,240 [Worker-402: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
 2025-09-09 16:49:23,260 [Worker-402: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\priyank.fichadiya\Desktop\Spring-Assignment\Bank_Management_System\src\test\resources
+2025-09-09 16:58:35,471 [Worker-403: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-09 16:58:35,498 [Worker-403: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-09 16:58:35,516 [Worker-403: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\priyank.fichadiya\Desktop\Spring-Assignment\Bank_Management_System\src\test\resources
+2025-09-09 16:58:46,742 [Worker-407: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-09 16:58:46,762 [Worker-407: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-09 16:58:46,768 [Worker-407: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\priyank.fichadiya\Desktop\Spring-Assignment\Bank_Management_System\src\test\resources
+2025-09-09 16:58:55,338 [Worker-407: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-09 16:58:55,408 [Worker-407: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-09 16:58:55,418 [Worker-407: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\priyank.fichadiya\Desktop\Spring-Assignment\Bank_Management_System\src\test\resources
+2025-09-09 16:59:06,479 [Worker-403: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
+2025-09-09 16:59:06,526 [Worker-403: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2025-09-09 16:59:06,531 [Worker-403: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\priyank.fichadiya\Desktop\Spring-Assignment\Bank_Management_System\src\test\resources
