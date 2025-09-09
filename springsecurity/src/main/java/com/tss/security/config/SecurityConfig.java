@@ -51,10 +51,10 @@ public class SecurityConfig {
 		http.authorizeHttpRequests(request -> request.requestMatchers("/api/register").permitAll());
 		http.authorizeHttpRequests(request -> request.requestMatchers("/api/login").permitAll());
 
-		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.GET, "/studentapp/**"));
-		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.POST, "/studentapp/**"));
-		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.PUT, "/studentapp/**"));
-		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.DELETE, "/studentapp/**"));
+		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.GET, "/studentapp/**").permitAll());
+		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.POST, "/studentapp/**").permitAll());
+		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.PUT, "/studentapp/**").permitAll());
+		http.authorizeHttpRequests(request -> request.requestMatchers(HttpMethod.DELETE, "/studentapp/**").permitAll());
 		http.exceptionHandling(exception -> exception.authenticationEntryPoint(authenticationEntryPoint));
 		http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
 		http.authorizeHttpRequests(request -> request.anyRequest().authenticated());
